@@ -7,13 +7,10 @@
 		"type": "git",
 		"url": "https://github.com/nfriedly/node-pagerank"
 	},
-	"bin": {
-		"pagerank": "./cli.js" 
-	}
 	"main": "pagerank.js",
 	"scripts": {
 		"test" : "./test.sh"
-	}
+	},
 	"keywords": [ "Google", "Pagerank", "SEO" ],
-	"license": "MIT",
+	"license": "MIT"
 }
