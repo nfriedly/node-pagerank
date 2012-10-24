@@ -3,8 +3,6 @@ var http = require('http');
 var util = require('util');
 var URL = require('url');
 
-// , converted to JavaScript by Nathan Friedly
-// Original was based on an alogoritham found at http://pagerank.gamesaga.net/
 
 /**
  * node-pagerank
@@ -12,10 +10,8 @@ var URL = require('url');
  * Tool for looking up the Google PageRank of a given domain.
  *
  * Returns a ReadableStream that will emit a single data event with the pagerank of the
- * site as a number.
+ * site as a number, or `undefined` if the site has no pagerank.
  * 
- * @author Nathan Friedly http://nfriedly.com
- * Based on PageRank Lookup v1.1 by HM2K
  *
  * Usage:
  *   new PageRank('http://example.com/')
@@ -27,7 +23,9 @@ var URL = require('url');
  *       console.log(error, pageRank);
  *   });
  * 
- *
+ * 
+ * @author Nathan Friedly - http://nfriedly.com
+ * Based on PageRank Lookup v1.1 by HM2K
  */
 function PageRank(url, callback) {
 	Stream.call(this);
@@ -166,7 +164,7 @@ pr.get = function(url, callback) {
 			var body = data.toString();
 			var pos = body.indexOf("Rank_");
 			if (pos != -1) {
-				self.emit('data', body.substr(pos + 9).trim());
+				self.emit('data', parseInt(body.substr(pos + 9), 10));
 			} else {
 				self.emit('data'); // pagerank is undefined
 			}				
