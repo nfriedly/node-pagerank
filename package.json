@@ -1,0 +1,16 @@
+{
+	name: 'pagerank',
+	description: 'Tool for finding the Google PageRank of a given url',
+	version: '0.0.1',
+	author: 'Nathan Friedly - http://nfriedly.com/',
+	repository: { 
+		type: 'git',
+		url: 'https://github.com/nfriedly/node-pagerank'
+	},
+	"bin": {
+		"pagerank": "./cli.js" 
+	}
+	main: 'pagerank.js',
+	keywords: [ 'Google', 'Pagerank' ],
+	license: 'MIT',
+}
