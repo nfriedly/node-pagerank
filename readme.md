@@ -6,7 +6,7 @@ A library for looking up the Google PageRank of any given web page.
 Installation
 ------------
 
-    npm install pagerank
+    npm install -g pagerank
 
 Usage
 -----
@@ -25,3 +25,8 @@ Usage
     new PageRank('http://example.com/', function(error, pageRank) {
         console.log(error, pageRank);
     });
+
+Or, use it via commandline (must be installed with -g):
+
+
+    pagerank http://example.com/
