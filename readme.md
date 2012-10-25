@@ -17,11 +17,11 @@ Usage
     new PageRank('http://example.com/').pipe(myCoolWriteableStream);
     
     // It's an event Emitter
-    // It will emit one data event with either a number or undefined
+    // It will emit one data event with either a number or null
     new PageRank('http://example.com/').on('data', console.log).on('error', console.error);
  
     // And it accepts callbacks
-    // pageRank will either be a number or undefined
+    // pageRank will either be a number or null
     new PageRank('http://example.com/', function(error, pageRank) {
         console.log(error, pageRank);
     });

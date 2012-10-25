@@ -19,6 +19,6 @@ new PageRank(process.argv[2], function(err, pr) {
 		console.error(err);
 		process.exit(2);
 	}
-	console.log(pr === undefined ? -1 : pr);
+	console.log(pr === null ? -1 : pr);
 	process.exit(0);
 });

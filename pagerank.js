@@ -10,7 +10,7 @@ var URL = require('url');
  * Tool for looking up the Google PageRank of a given domain.
  *
  * Returns a ReadableStream that will emit a single data event with the pagerank of the
- * site as a number, or `undefined` if the site has no pagerank.
+ * site as a number, or null if the site has no pagerank.
  * 
  *
  * Usage:
@@ -166,7 +166,7 @@ pr.get = function(url, callback) {
 			if (pos != -1) {
 				self.emit('data', parseInt(body.substr(pos + 9), 10));
 			} else {
-				self.emit('data'); // pagerank is undefined
+				self.emit('data', null); // page does not currently have a pagerank
 			}				
 			self.emit('end');
 		});
