@@ -3,6 +3,8 @@ node-pagerank
 
 A library for looking up the Google PageRank of any given web page.
 
+[![Build Status](https://travis-ci.org/nfriedly/node-pagerank.png?branch=master)](https://travis-ci.org/nfriedly/node-pagerank)
+
 Installation
 ------------
 
