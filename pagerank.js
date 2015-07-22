@@ -28,6 +28,9 @@ var URL = require('url');
  * Based on PageRank Lookup v1.1 by HM2K
  */
 function PageRank(url, callback) {
+	if (!this instanceof PageRank) {
+		return new PageRank(url, callback);
+	}
 	Stream.call(this);
 	this.readable = true;
 	this.writable = false;
@@ -54,7 +57,7 @@ PageRank.HASH_MULTIPLIER_2 = 0x1003F;
 
 PageRank.get = function(url, callback) {
 	return new PageRank(url, callback);
-}
+};
 
 var pr = PageRank.prototype;
 
@@ -153,7 +156,6 @@ pr.get = function(url, callback) {
 			"User-Agent": PageRank.USER_AGENT
 		}
 	};
-	
 	var self = this;
 	var req = http.get(options, function(res) {
 		var data = new Buffer(0);
@@ -162,6 +164,7 @@ pr.get = function(url, callback) {
 		});
 		res.on('end', function() {
 			var body = data.toString();
+			// body looks like Rank_1:1:7 where the 7 is the pagerank
 			var pos = body.indexOf("Rank_");
 			if (pos != -1) {
 				self.emit('data', parseInt(body.substr(pos + 9), 10));
