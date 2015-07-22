@@ -158,6 +158,13 @@ pr.get = function(url, callback) {
 	};
 	var self = this;
 	var req = http.get(options, function(res) {
+		if (res.statusCode != 200) {
+			var err = new Error('Received ' + res.statusCode + ' status code from google pagerank request');
+			err.request = options;
+			err.response = res;
+			self.emit('error', err);
+			return;
+		}
 		var data = new Buffer(0);
 		res.on('data', function (chunk) {
 			data = Buffer.concat([data, chunk]);
