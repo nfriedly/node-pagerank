@@ -1,7 +1,7 @@
 var test = require('tape');
 var PageRank = require('../pagerank');
 
-test('checksums', function(t) {
+test('checksum', function(t) {
 
     var samples = {
         "45281": "77",
