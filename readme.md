@@ -30,7 +30,7 @@ new PageRank('http://example.com/', function(error, pageRank) {
 });
 ```
 
-Note: starting with version 1.3, `pagerank` will return/emit an error event when a non-200 status code is recieved from Google.
+Note: starting with version 1.3, `pagerank` will return/emit an error event when a non-200 status code is received from Google.
 (Previously it gave a `null` pagerank, but no error.)
 
 Or, install it globally
