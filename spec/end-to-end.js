@@ -1,7 +1,6 @@
 var test = require('tape');
 var http = require('http');
-var Stream = require('stream');
-var PageRank = require('../pagerank');
+var pageRank = require('../lib/pagerank');
 
 // SKIPPING these tests until the fix for https://github.com/joyent/node/issues/25751 is merged
 
@@ -22,8 +21,8 @@ test.skip('end-to-end happy case', function(t) {
     var server = http.createServer(mockGoogle);
 
     server.listen(function() {
-        PageRank.HOST = 'localhost:' + server.address().port;
-        new PageRank(target_url, function(err, rank) {
+        pageRank.HOST = 'localhost:' + server.address().port;
+        pageRank(target_url, function(err, rank) {
             t.error(err, 'no error expected');
             t.equal(rank, expected_rank, 'Expected pagerank');
             server.close(function() {
@@ -49,8 +48,8 @@ test.skip('end-to-end error case', function(t) {
     var server = http.createServer(mockGoogle);
 
     server.listen(function() {
-        PageRank.HOST = 'localhost:' + server.address().port;
-        new PageRank(target_url, function(err, rank) {
+        pageRank.HOST = 'localhost:' + server.address().port;
+        pageRank(target_url, function(err, rank) {
             t.ok(err, 'error expected');
             t.equal(err.message, 'Received 404 status code from Google pagerank request', 'expected error message');
             server.close(function() {

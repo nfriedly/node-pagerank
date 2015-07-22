@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var PageRank = require('./pagerank');
+var pageRank = require('../lib/pagerank');
 
 if (process.argv.length < 3) {
 	console.log("Usage: pagerank http://example.com/\n" + 
@@ -14,7 +14,7 @@ if (process.argv.length < 3) {
 }
 
 
-new PageRank(process.argv[2], function(err, pr) {
+pageRank(process.argv[2], function(err, pr) {
 	if (err) {
 		console.error(err);
 		process.exit(2);

@@ -7,12 +7,12 @@
     "type": "git",
     "url": "https://github.com/nfriedly/node-pagerank"
   },
-  "main": "pagerank.js",
+  "main": "./lib/pagerank.js",
   "scripts": {
-    "test": "tape spec/*.js | tap-spec"
+    "test": "jshint {lib,bin,spec}/*.js && tape spec/*.js | tap-spec"
   },
   "bin": {
-    "pagerank": "./cli.js"
+    "pagerank": "./bin/cli.js"
   },
   "keywords": [
     "Google",
@@ -21,6 +21,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "jshint": "^2.8.0",
     "tap-spec": "^4.0.2",
     "tape": "^4.0.1"
   }

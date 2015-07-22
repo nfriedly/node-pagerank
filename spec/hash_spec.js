@@ -1,5 +1,5 @@
 var test = require('tape');
-var PageRank = require('../pagerank');
+var pageRank = require('../lib/pagerank');
 
 test('hash', function(t) {
 
@@ -13,7 +13,7 @@ test('hash', function(t) {
 
     Object.keys(samples).forEach(function(input) {
         var expected = samples[input];
-        var actual = PageRank.prototype.hash(input);
+        var actual = pageRank.hash(input);
         t.equal(actual, expected, "hashing " + input);
     });
 

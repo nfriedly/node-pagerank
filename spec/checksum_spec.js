@@ -1,5 +1,5 @@
 var test = require('tape');
-var PageRank = require('../pagerank');
+var pageRank = require('../lib/pagerank');
 
 test('checksum', function(t) {
 
@@ -12,7 +12,7 @@ test('checksum', function(t) {
 
     Object.keys(samples).forEach(function(input) {
         var expected = samples[input];
-        var actual = PageRank.prototype.checksum(input);
+        var actual = pageRank.checksum(input);
         t.equal(actual, expected, "checksuming " + input);
     });
 

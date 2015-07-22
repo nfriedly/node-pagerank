@@ -14,24 +14,19 @@ Usage
 -----
 
 ```js
-var PageRank = require('pagerank');
+var getPageRank = require('pagerank');
 
-// It's a ReadibleStream
-new PageRank('http://example.com/').pipe(myCoolWriteableStream);
-
-// It's an event Emitter
-// It will emit one data event with either a number or null
-new PageRank('http://example.com/').on('data', console.log).on('error', console.error);
-
-// And it accepts callbacks
 // pageRank will either be a number or null
-new PageRank('http://example.com/', function(error, pageRank) {
+getPageRank('http://example.com/', function(error, pageRank) {
     console.log(error, pageRank);
 });
 ```
 
-Note: starting with version 1.3, `pagerank` will return/emit an error event when a non-200 status code is received from Google.
+Breaking changes: 
+
+* Starting with version 1.3, `pagerank` will return/emit an error event when a non-200 status code is received from Google.
 (Previously it gave a `null` pagerank, but no error.)
+* Starting with version 2.0, `pagerank` is no longer a readable stream / event emitter, it can only be used via callbacks.
 
 Or, install it globally
 
