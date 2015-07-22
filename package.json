@@ -1,7 +1,7 @@
 {
   "name": "pagerank",
   "description": "Tool for finding the Google PageRank of a given url. Can be used as a node module or a cli command when installed with -g",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Nathan Friedly - http://nfriedly.com/",
   "repository": {
     "type": "git",
