@@ -150,7 +150,7 @@ pr.get = function(url, callback) {
 	var hash = this.hash(url);
 	var checksum = this.checksum(hash);
 	var options = {
-		hostname: PageRank.HOST,
+		host: PageRank.HOST,
 		path: "/tbr?client=navclient-auto&ch=" + checksum + hash + "&features=Rank&q=info:" + url,
 		headers: {
 			"User-Agent": PageRank.USER_AGENT
@@ -159,7 +159,7 @@ pr.get = function(url, callback) {
 	var self = this;
 	var req = http.get(options, function(res) {
 		if (res.statusCode != 200) {
-			var err = new Error('Received ' + res.statusCode + ' status code from google pagerank request');
+			var err = new Error('Received ' + res.statusCode + ' status code from Google pagerank request');
 			err.request = options;
 			err.response = res;
 			self.emit('error', err);
