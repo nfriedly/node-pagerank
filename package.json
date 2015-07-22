@@ -1,19 +1,27 @@
 {
-	"name": "pagerank",
-	"description": "Tool for finding the Google PageRank of a given url. Can be used as a node module or a cli command when installed with -g",
-	"version": "1.2.0",
-	"author": "Nathan Friedly - http://nfriedly.com/",
-	"repository": { 
-		"type": "git",
-		"url": "https://github.com/nfriedly/node-pagerank"
-	},
-	"main": "pagerank.js",
-	"scripts": {
-		"test" : "./test.sh"
-	},
-	"bin": {
-		"pagerank": "./cli.js" 
-	},
-	"keywords": [ "Google", "Pagerank", "SEO" ],
-	"license": "MIT"
+  "name": "pagerank",
+  "description": "Tool for finding the Google PageRank of a given url. Can be used as a node module or a cli command when installed with -g",
+  "version": "1.2.0",
+  "author": "Nathan Friedly - http://nfriedly.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nfriedly/node-pagerank"
+  },
+  "main": "pagerank.js",
+  "scripts": {
+    "test": "tape spec/*.js | tap-spec"
+  },
+  "bin": {
+    "pagerank": "./cli.js"
+  },
+  "keywords": [
+    "Google",
+    "Pagerank",
+    "SEO"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "tap-spec": "^4.0.2",
+    "tape": "^4.0.1"
+  }
 }

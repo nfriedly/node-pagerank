@@ -1,24 +1,20 @@
-var assert = require('assert');
+var test = require('tape');
 var PageRank = require('../pagerank');
 
-var actual, expected;
+test('checksums', function(t) {
 
+    var samples = {
+        "45281": "77",
+        "4270126655": "76",
+        "4070080011": "76",
+        "84096221": "70"
+    };
 
-actual = PageRank.prototype.checksum("45281");
-expected = "77";
-assert.equal(actual, expected);
+    Object.keys(samples).forEach(function(input) {
+        var expected = samples[input];
+        var actual = PageRank.prototype.checksum(input);
+        t.equal(actual, expected, "checksuming " + input);
+    });
 
-
-actual = PageRank.prototype.checksum("4270126655");
-expected = "76";
-assert.equal(actual, expected);
-
-
-actual = PageRank.prototype.checksum("4070080011");
-expected = "76";
-assert.equal(actual, expected);
-
-
-actual = PageRank.prototype.checksum("84096221");
-expected = "70";
-assert.equal(actual, expected);
+    t.end();
+});
