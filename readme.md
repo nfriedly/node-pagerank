@@ -1,3 +1,10 @@
+# No longer Functional
+
+Google removed public access to PageRank scores, so this library is no longer functional.
+
+
+
+
 node-pagerank
 =============
 
