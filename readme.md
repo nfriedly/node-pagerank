@@ -3,10 +3,7 @@
 Google removed public access to PageRank scores, so this library is no longer functional.
 
 
-
-
-node-pagerank
-=============
+# Old description, from when it worked
 
 Tool for finding the Google PageRank of a given url. Can be used as a node module or a cli command when installed with `-g`.
 
