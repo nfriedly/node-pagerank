@@ -8,7 +8,7 @@ Google removed public access to PageRank scores, so this library is no longer fu
 node-pagerank
 =============
 
-A library for looking up the Google PageRank of any given web page. Try a live example  at http://pagerank.nfriedly.com/
+Tool for finding the Google PageRank of a given url. Can be used as a node module or a cli command when installed with `-g`.
 
 [![Build Status](https://travis-ci.org/nfriedly/node-pagerank.png?branch=master)](https://travis-ci.org/nfriedly/node-pagerank)
 
